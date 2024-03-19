@@ -141,7 +141,7 @@ const usePrayers = (): any => {
               date: {date: time.date, day: time.day, dateAr: time.dateAr},
             };
           });
-          console.log('set data');
+          console.log('set prayer times data');
           return data;
         })
         .catch((err: any) => {
@@ -178,7 +178,7 @@ const usePrayers = (): any => {
   };
 
   const resetData = () => {
-    console.log('reset data');
+    console.log('reset prayer times data');
     setPrayerRaw([]);
   };
 

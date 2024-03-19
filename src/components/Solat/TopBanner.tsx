@@ -3,9 +3,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import customStyles from '../../styles';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 import usePrayers from '../../hooks/usePrayers';
+import {useLocation} from '../../context/LocationContext';
 
 const TopBanner = (): JSX.Element => {
   const {datesArr, daysArr, datesArabicArr, todayIndex} = usePrayers();
+  const {locationName} = useLocation();
   const day = daysArr[todayIndex];
   const date = datesArr[todayIndex];
   const dateArabic = datesArabicArr[todayIndex];
@@ -14,7 +16,7 @@ const TopBanner = (): JSX.Element => {
     <View>
       <View style={styles.locationContainer}>
         <Icon2 name="location-sharp" size={20} color="grey" />
-        <Text style={styles.locationText}>Bogor, Jawa Barat</Text>
+        <Text style={styles.locationText}>{locationName}</Text>
       </View>
       <View style={styles.dateAndCountDownContainer}>
         <View style={styles.dateContainer}>
